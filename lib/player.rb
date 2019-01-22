@@ -6,7 +6,7 @@ class Player
     @hp = 100
   end
 
-  def reduce
+  def receive_damage
     @hp -= 10
   end
 
