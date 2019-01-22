@@ -12,4 +12,12 @@ feature 'Battle' do
     expect(page).to have_content("Seb VS. Alex")
   end
 
+  scenario 'shows player 1 hit points' do
+    visit('/')
+    fill_in('player1', with: 'Seb')
+    fill_in('player2', with: 'Alex')
+    click_button('Submit')
+    expect(page).to have_content("Seb HP: 100/100")
+  end
+
 end
