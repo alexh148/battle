@@ -9,8 +9,7 @@ feature 'Battle' do
     fill_in('player1', with: 'Seb')
     fill_in('player2', with: 'Alex')
     click_button('Submit')
-    expect(page).to have_content("Player 1: Seb")
-    expect(page).to have_content("Player 2: Alex")
+    expect(page).to have_content("Seb VS. Alex")
   end
 
 end
