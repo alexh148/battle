@@ -1,3 +1,5 @@
+require_relative 'web_helpers'
+
 feature 'Battle' do
   # scenario 'has a testing infrastructure message' do
   #   visit('/')
@@ -5,18 +7,12 @@ feature 'Battle' do
   # end
 
   scenario 'allows players to fill in their names' do
-    visit('/')
-    fill_in('player1', with: 'Seb')
-    fill_in('player2', with: 'Alex')
-    click_button('Submit')
+    sign_in_and_play
     expect(page).to have_content("Seb VS. Alex")
   end
 
   scenario 'shows player 1 hit points' do
-    visit('/')
-    fill_in('player1', with: 'Seb')
-    fill_in('player2', with: 'Alex')
-    click_button('Submit')
+    sign_in_and_play
     expect(page).to have_content("Seb HP: 100/100")
   end
 
