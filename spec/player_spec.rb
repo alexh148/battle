@@ -17,11 +17,8 @@ describe Player do
   end
 
   describe '#receive_damage' do
-
     it 'should recieve 10 damage' do
       expect{ dave.receive_damage }.to change {dave.hp }.by(-10)
     end
-
   end
-
 end

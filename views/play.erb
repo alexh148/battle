@@ -1,17 +1,17 @@
-<h1 align='center'><%= @player1.name %> VS. <%= @player2.name %></h1>
+<h1 align='center'><%= @game.player_1.name %> VS. <%= @game.player_2.name %></h1>
 
 <!-- Player 1 -->
 <div style="float:left">
-  <h3><%= @player1.name %></h3>
+  <h3><%= @game.player_1.name %></h3>
   <form action=/attack method='post'>
     <input type='submit' value='Attack'>
 
   </form>
-  <h4 align='left'><%= @player1.name %> HP: <%= @player1.hp%>/100</h4>
+  <h4 align='left'><%= @game.player_1.name %> HP: <%= @game.player_1.hp%>/100</h4>
 </div>
 
 <!-- Player 2 -->
 <div style="float:right">
-  <h3><%= @player2.name %></h3>
-  <h4 align='right'><%= @player2.name%> HP: <%= @player2.hp%>/100</h4>
+  <h3><%= @game.player_2.name %></h3>
+  <h4 align='right'><%= @game.player_2.name%> HP: <%= @game.player_2.hp%>/100</h4>
 </div>
