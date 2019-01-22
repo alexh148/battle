@@ -22,4 +22,11 @@ feature 'Battle' do
     expect(page).to have_content("Seb attacked Alex")
   end
 
+  scenario 'player 1 attacks player 2 and player 2 HP is reduced by 10' do
+    sign_in_and_play
+    click_button('Attack')
+    click_button('OK')
+    expect(page).to have_content("Alex HP: 90/100")
+  end
+
 end
