@@ -11,9 +11,15 @@ feature 'Battle' do
     expect(page).to have_content("Seb VS. Alex")
   end
 
-  scenario 'shows player 1 hit points' do
+  scenario 'shows player 2 hit points' do
     sign_in_and_play
-    expect(page).to have_content("Seb HP: 100/100")
+    expect(page).to have_content("Alex HP: 100/100")
+  end
+
+  scenario 'player 1 attacks player 2 and gets confirmation' do
+    sign_in_and_play
+    click_button('attack')
+    expect(page).to have_content("Seb attacked Alex")
   end
 
 end
