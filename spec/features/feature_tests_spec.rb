@@ -1,10 +1,6 @@
 require_relative 'web_helpers'
 
 feature 'Battle' do
-  # scenario 'has a testing infrastructure message' do
-  #   visit('/')
-  #   expect(page).to have_content('Testing infrastructure working!')
-  # end
 
   scenario 'allows players to fill in their names' do
     sign_in_and_play
@@ -27,6 +23,11 @@ feature 'Battle' do
     click_button('Attack')
     click_button('OK')
     expect(page).to have_content("Alex HP: 90/100")
+  end
+
+  scenario 'shows the current players turn' do
+    sign_in_and_play
+    expect(page).to have_content("Seb's turn")
   end
 
 end
